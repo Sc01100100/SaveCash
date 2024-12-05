@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Cash</title>
+    <link
+      rel="shortcut icon"
+      href="https://nekowawolf.github.io/delete-later/assets/img/Save%20Cash%20logo.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto p-5">
+
+      <!-- Header -->
+
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center gap-2">
+          <img 
+            src="https://nekowawolf.github.io/delete-later/assets/img/Save%20Cash%20logo.png" 
+            alt="Logo" 
+            class="w-8 h-8"
+          />
+          <p class="font-semibold">SAVE CASH</p>
+        </div>
+        <button id="menu-btn" class="text-white lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <nav class="hidden flex-col gap-6 lg:flex lg:flex-row lg:bg-transparent">
+          <a href="#home" class="hover:text-blue-400">Home</a>
+          <a href="#about" class="hover:text-blue-400">About</a>
+          <a href="#service" class="hover:text-blue-400">Service</a>
+          <a href="#faq" class="hover:text-blue-400">FAQ</a>
+        </nav>
+      </div>
+
+
+      <!-- Dropdown for Mobile Menu -->
+
+      <div class="absolute top-20 left-0 w-full bg-gray-700 bg-opacity-90 rounded-b-lg shadow-lg p-4 z-20 md:hidden text-center hidden" id="dropdown-menu"> 
+        <a href="#home" class="block text-white no-underline mb-4 text-base transition-colors duration-300 hover:text-blue-400">Home</a>
+        <a href="#about" class="block text-white no-underline mb-4 text-base transition-colors duration-300 hover:text-blue-400">About</a>
+        <a href="#service" class="block text-white no-underline mb-4 text-base transition-colors duration-300 hover:text-blue-400">Service</a>
+        <a href="#faq" class="block text-white no-underline text-base transition-colors duration-300 hover:text-blue-400">FAQ</a>
+      </div>
+
+
+      <!-- Home Section -->
+
+      <section id="home" class="py-16 flex flex-col-reverse md:flex-row items-center max-w-7xl mx-auto px-6">
+        <div class="md:w-1/2 text-center md:text-left">
+          <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl">
+            Track your money easily with 
+            <span class="text-transparent bg-clip-text bg-gradient-to-tr to-cyan-500 from-blue-600">
+              Save Cash
+            </span>
+          </h1>
+          <p class="mt-4 text-lg text-gray-300">
+            Save Cash helps you monitor your expenses, create budgets, and analyze your financial habits effortlessly.
+          </p>
+          <a href="pages/signin.html" class="mt-8 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg">
+            Get Started
+          </a>
+        </div>
+      
+        <div class="md:w-1/2">
+          <img 
+            src="https://nekowawolf.github.io/delete-later/assets/img/3d-render-hand-put-golden-coin-into-piggy-bank.png" 
+            alt="Sc" 
+            class="sm:w-96 w-64 sm:ml-64 ml-0 mb-4 sm:mb-0 rounded-lg"
+          />
+        </div>
+      </section>
+      
+
+      <!-- About Section -->
+
+      <section id="about" class="py-16 max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <img 
+            src="https://nekowawolf.github.io/delete-later/assets/img/logosc.png" 
+            alt="Sc" 
+            class="w-full rounded-lg "
+          />
+        </div>
+      
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-center md:text-left">About Us</h2>
+          <p class="mt-4 text-gray-300 text-center md:text-left">
+            Save Cash is your ultimate tool to track and manage your finances efficiently. 
+            Whether you're budgeting for the month, analyzing spending habits, or planning your financial goals, Save Cash is here to make it easier.
+          </p>
+          <p class="mt-4 text-gray-300 text-center md:text-left">
+            We believe that understanding your finances is the first step towards achieving financial freedom. With our user-friendly interface and powerful tools, you'll gain insights into your expenses and take control of your money like never before.
+          </p>
+        </div>
+      </section>
+      
+
+      <!-- Service Section -->
+
+      <section id="service"
+        class="relative block px-6 py-10 md:py-20 md:px-10 ">
+
+
+        <div class="relative mx-auto max-w-5xl text-center">
+            <span class="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+            Why choose us
+            </span>
+            <h2
+                class="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
+                Take Control of Your Finances with Tools You'll Love
+            </h2>
+            <p
+                class="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+                Our tools offer complete flexibility for managing your finances. No technical expertise needed – our user-friendly interface makes saving and budgeting effortless.
+            </p>
+        </div>
+
+
+        <div class="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
+                <div class="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border "
+                    style="background-image: linear-gradient(rgb(80, 70, 229) 0%, rgb(43, 49, 203) 100%); border-color: rgb(93, 79, 240);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-color-swatch" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M19 3h-4a2 2 0 0 0 -2 2v12a4 4 0 0 0 8 0v-12a2 2 0 0 0 -2 -2"></path>
+                        <path d="M13 7.35l-2 -2a2 2 0 0 0 -2.828 0l-2.828 2.828a2 2 0 0 0 0 2.828l9 9"></path>
+                        <path d="M7.3 13h-2.3a2 2 0 0 0 -2 2v4a2 2 0 0 0 2 2h12"></path>
+                        <line x1="17" y1="17" x2="17" y2="17.01"></line>
+                    </svg>
+                </div>
+                <h3 class="mt-6 text-gray-400">Customizable</h3>
+                <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+                  Adapt your budgeting and saving goals to fit your lifestyle. Adjust everything, from expense categories to savings targets, ensuring a personalized experience.
+                </p>
+            </div>
+
+
+            <div class="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
+                <div class="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border "
+                    style="background-image: linear-gradient(rgb(80, 70, 229) 0%, rgb(43, 49, 203) 100%); border-color: rgb(93, 79, 240);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bolt" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <polyline points="13 3 13 10 19 10 11 21 11 14 5 14 13 3"></polyline>
+                    </svg>
+                </div>
+                <h3 class="mt-6 text-gray-400">Fast Performance</h3>
+                <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">Get real-time financial updates and analytics. Our platform delivers quick, reliable data to help you make informed decisions without delays
+                </p>
+            </div>
+
+
+            <div class="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
+                <div class="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border "
+                    style="background-image: linear-gradient(rgb(80, 70, 229) 0%, rgb(43, 49, 203) 100%); border-color: rgb(93, 79, 240);">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tools" width="24"
+                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
+                        <line x1="14.5" y1="5.5" x2="18.5" y2="9.5"></line>
+                        <polyline points="12 8 7 3 3 7 8 12"></polyline>
+                        <line x1="7" y1="8" x2="5.5" y2="9.5"></line>
+                        <polyline points="16 12 21 17 17 21 12 16"></polyline>
+                        <line x1="16" y1="17" x2="14.5" y2="18.5"></line>
+                    </svg>
+                </div>
+                <h3 class="mt-6 text-gray-400">Fully Featured</h3>
+                <p class="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
+                  Everything you need to manage your money effectively is built-in. No extra downloads or integrations required – just a seamless experience from start to finish.
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+     <!-- FAQ Section -->
+
+    <section id="faq">
+    <div class="relative w-full bg-gray-900 px-6 pt-10 pb-8 mt-32 ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
+    <div class="mx-auto px-5">
+        <div class="flex flex-col items-center">
+            <h2 class="mt-5 text-center text-3xl font-bold tracking-tight md:text-5xl">FAQ</h2>
+            <p class="mt-3 text-lg text-neutral-500 md:text-xl">Frequenty asked questions
+
+            </p>
+        </div>
+        <div class="mx-auto mt-8 grid max-w-xl divide-y divide-neutral-200">
+            <div class="py-5">
+                <details class="group">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+                        <span> What is Save Cash?</span>
+                        <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                    </summary>
+                    <p class="group-open:animate-fadeIn mt-3 text-white">
+                      Save Cash is a financial tracking and budgeting tool.
+                    </p>
+                </details>
+            </div>
+            <div class="py-5">
+                <details class="group">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+                        <span>How can I get started?</span>
+                        <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision"
+                                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="1.5" viewBox="0 0 24 24" width="24">
+                                    <path d="M6 9l6 6 6-6"></path>
+                                </svg>
+                            </span>
+                    </summary>
+                    <p class="group-open:animate-fadeIn mt-3 text-white">
+                      Click the "Get Started" button above to sign up.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </div>
+    </section>
+
+      
+      <!-- Footer -->
+
+      <div class="max-w-2xl mx-auto text-white py-10 mt-32">
+        <div class="flex justify-center items-center">
+          <h3 class="text-[10vw] font-bold text-white opacity-20 mx-2"> 
+            SAVE
+          </h3>
+          <h3 class="text-[10vw] font-bold text-white opacity-20 mx-2"> 
+            CASH
+          </h3>
+        </div>
+        <div class="mt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400"> 
+          <p class="order-2 md:order-1 mt-8 md:mt-0 text-center md:text-left">
+            &copy; Sc, 2024.
+          </p>
+          <div class="order-1 md:order-2 flex space-x-4 mt-4 md:mt-0">
+            <a href="#about" class="px-2 text-gray-500 hover:text-gray-200">About us</a>
+            <a href="https://sc.github.io/Save-Cash" class="px-2 border-l text-gray-500 hover:text-gray-200" target="_blank">Stock Check</a>
+            <a href="https://github.com/Sc" target="_blank" class="px-2 border-l text-gray-500 hover:text-gray-200">Github</a>
+          </div> 
+        </div>
+      </div>
+
+    <script src="assets/js/menu.js"></script>  
+  </body>
+</html>
