@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Cash | Home</title>
+    <link
+      rel="shortcut icon"
+      href="https://nekowawolf.github.io/delete-later/assets/img/Save%20Cash%20logo.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/2ff8362c80.js" crossorigin="anonymous"></script>
+    <script type="module" src="/assets/js/fetch-income.js" defer></script>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div
+  id="sidebar"
+  class="-translate-x-full lg:translate-x-0 fixed h-screen w-64 bg-gray-800 p-4 transform transition-transform duration-300 ease-in-out z-50"
+>
+  <div class="flex items-center justify-center mb-8 mt-9">
+    <img
+      alt="Logo"
+      class="w-10 h-10 mr-2 rounded-lg"
+      src="https://avatars.githubusercontent.com/u/190675416?s=96&v=4"
+    />
+    <span class="text-xl font-semibold">Save Cash</span>
+  </div>
+  <nav>
+    <ul class="flex flex-col items-center space-y-4 mt-16">
+      <li>
+        <a
+          class="flex items-center text-gray-200 mr-9 hover:text-white"
+          href="#"
+        >
+          <i class="fas fa-th-large mr-2"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center text-gray-400 hover:text-white"
+          href="transaction.html"
+        >
+          <i class="fas fa-wallet mr-2"></i>
+          <span>Add Transaction</span>
+        </a>
+      </li>
+      <li>
+        <a id="logoutButton" class="flex items-center text-gray-400 hover:text-white mt-96" style="cursor: pointer;">
+          <i class="fas fa-right-from-bracket mr-2"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+      <!-- Main Content -->
+  <main
+  id="main-content"
+  class="flex-1 p-6 bg-gray-900 text-white ml-0 lg:ml-64"
+>
+  <header class="mb-6">
+    <h1 class="text-2xl font-bold">
+      Hai <span id="userName" class=" text-white"></span>
+    </h1>
+    <p class="text-gray-400">Manage your finances efficiently.</p>
+  </header>
+
+   <!-- Burger Menu -->
+<button
+id="burgerMenu"
+class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
+>
+<i class="fas fa-bars text-2xl"></i>
+</button>
+
+   
+  <section class="space-y-6">
+    <!-- Cards Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Example Card -->
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <h2 class="text-lg font-semibold mb-2">Total Balance</h2>
+        <p class="text-2xl font-bold text-green-500">
+          <span id="userBalance">0</span>
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <h2 class="text-lg font-semibold mb-2">Income</h2>
+        <p class="text-2xl font-bold text-blue-500">$0</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <h2 class="text-lg font-semibold mb-2">Expenses</h2>
+        <p class="text-2xl font-bold text-red-500">$0</p>
+      </div>
+    </div>
+
+    <!-- Recent Transactions Section -->
+    <div>
+      <h2 class="text-xl font-bold mb-4">Recent Transactions</h2>
+      <ul class="space-y-4" id="fillincome" >
+      
+      </ul>
+    </div>
+  </section>
+</main>
+</div>
+
+    <!-- External Scripts -->
+    <script src="../assets/js/burger-menu.js"></script>
+    <script type="module" src="../assets/js/fetch-user.js"></script>
+    <script type="module" src="../assets/js/post-logout.js"></script>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Cash | Transaction</title>
+    <link
+      rel="shortcut icon"
+      href="https://nekowawolf.github.io/delete-later/assets/img/Save%20Cash%20logo.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/2ff8362c80.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="flex h-screen">
+      <!-- Sidebar -->
+      <div
+  id="sidebar"
+  class=" -translate-x-full lg:translate-x-0 fixed h-screen w-64 bg-gray-800 p-4 transform transition-transform duration-300 ease-in-out z-50"
+>
+  <div class="flex items-center justify-center mb-8 mt-9">
+    <img
+      alt="Logo"
+      class="w-10 h-10 mr-2 rounded-lg"
+      src="https://avatars.githubusercontent.com/u/190675416?s=96&v=4"
+    />
+    <span class="text-xl font-semibold">Save Cash</span>
+  </div>
+  <nav>
+    <ul class="flex flex-col items-center space-y-4 mt-16">
+      <li>
+        <a
+          class="flex items-center text-gray-400 mr-9 hover:text-white"
+          href="home.html"
+        >
+          <i class="fas fa-th-large mr-2"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a
+          class="flex items-center text-gray-200 hover:text-white"
+          href="#"
+        >
+          <i class="fas fa-wallet mr-2"></i>
+          <span>Add Transaction</span>
+        </a>
+      </li>
+      <li>
+        <a id="logoutButton" class="flex items-center text-gray-400 hover:text-white mt-96" style="cursor: pointer;">
+          <i class="fas fa-right-from-bracket mr-2"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<main
+  id="main-content"
+  class="flex-1 p-6 bg-gray-900 text-white ml-0 lg:ml-64"
+>
+  <header class="mb-6">
+    <h1 class="text-2xl font-bold">
+      Hai <span id="userName" class=" text-white"></span>
+    </h1>
+    <p class="text-gray-400">Manage your finances efficiently.</p>
+  </header>
+
+   <!-- Burger Menu -->
+<button
+id="burgerMenu"
+class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
+>
+<i class="fas fa-bars text-2xl"></i>
+</button>
+
+<section class="space-y-6">
+    <!-- Form for Transaction -->
+    <form
+      id="transactionForm"
+      class="bg-gray-800 p-6 rounded-lg shadow-md space-y-4 mt-16"
+    >
+      <h2 class="text-xl font-bold mb-4">Add Transaction</h2>
+  
+      <div>
+        <label for="transactionAmount" class="block text-sm font-medium mb-1">
+          Amount
+        </label>
+        <input
+          type="number"
+          step="0.01"
+          id="transactionAmount"
+          name="amount"
+          class="w-full p-2 bg-gray-700 text-white rounded-lg focus:ring focus:ring-blue-500"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="transactionCategory" class="block text-sm font-medium mb-1">
+          Category
+        </label>
+        <input
+          type="text"
+          id="transactionCategory"
+          name="category"
+          class="w-full p-2 bg-gray-700 text-white rounded-lg focus:ring focus:ring-blue-500"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="transactionDescription" class="block text-sm font-medium mb-1">
+          Description
+        </label>
+        <textarea
+          id="transactionDescription"
+          name="description"
+          class="w-full p-2 bg-gray-700 text-white rounded-lg focus:ring focus:ring-blue-500"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+  
+      <button
+        type="submit"
+        class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg"
+      >
+        Submit Transaction
+      </button>
+    </form>
+  
+          <!-- Form for Income -->
+      <form
+      id="income-form"
+      class="bg-gray-800 p-6 rounded-lg shadow-md space-y-4"
+      >
+      <h2 class="text-xl font-bold mb-4">Add Income</h2>
+
+      <div>
+        <label for="amount" class="block text-sm font-medium mb-1">
+          Amount
+        </label>
+        <input
+          type="number"
+          step="0.01"
+          id="amount"
+          name="amount"
+          class="w-full p-2 bg-gray-700 text-white rounded-lg focus:ring focus:ring-green-500"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="source" class="block text-sm font-medium mb-1">
+          Source
+        </label>
+        <input
+          type="text"
+          id="source"
+          name="source"
+          class="w-full p-2 bg-gray-700 text-white rounded-lg focus:ring focus:ring-green-500"
+          required
+        />
+      </div>
+
+      <button
+        type="button"
+        id="button-income"
+        class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg"
+      >
+        Submit Income
+      </button>
+      </form>
+  </section>
+  <h1 class="text-gray-900 mt-32">.</h1>
+
+
+
+
+
+ <!-- External Scripts -->
+ <script src="../assets/js/burger-menu.js"></script>
+ <script type="module" src="../assets/js/controller/post-income.js"></script>
+ <script type="module" src="../assets/js/fetch-user2.js"></script>
+ <script type="module" src="../assets/js/post-logout.js"></script>
+</body>
+</html>
