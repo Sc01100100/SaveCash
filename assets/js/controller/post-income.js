@@ -1,5 +1,5 @@
 import { onClick, getValue } from "https://bukulapak.github.io/element/process.js";
-import { urlPOSTIncome, AmbilResponse } from "../config/url-post-income.js";
+import { urlPOSTIncome, AmbilResponse } from "../config/url-post.js";
 
 function postDataWithAuth(url, data, callback) {
     const token = localStorage.getItem("Authorization");
