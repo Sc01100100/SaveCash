@@ -10,7 +10,21 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/2ff8362c80.js" crossorigin="anonymous"></script>
-    <script type="module" src="../assets/js/fetch-income.js" defer></script>
+    <script type="module" src="../assets/js/fetch-transaction.js" defer></script>
+    <style>
+      input[type="month"] {
+          color: white;
+      }
+      input[type="month"]::-webkit-datetime-edit-text,
+      input[type="month"]::-webkit-datetime-edit-month-field,
+      input[type="month"]::-webkit-datetime-edit-day-field,
+      input[type="month"]::-webkit-datetime-edit-year-field {
+          color: white;
+      }
+      input[type="month"]::-webkit-calendar-picker-indicator {
+          filter: invert(1);
+      }
+  </style>
   </head>
   <body class="bg-gray-900 text-white">
     <div class="flex h-screen">
@@ -89,22 +103,59 @@ class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
         </p>
       </div>
       <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-        <h2 class="text-lg font-semibold mb-2">Income</h2>
-        <p class="text-2xl font-bold text-blue-500">$0</p>
+        <h2 class="text-lg font-semibold mb-2">
+          Income <span class="text-sm text-gray-400">(month)</span>
+        </h2>
+        <p id="incomeTotal" class="text-2xl font-bold text-blue-500">$0</p>
       </div>
+      
       <div class="bg-gray-800 p-4 rounded-lg shadow-md">
-        <h2 class="text-lg font-semibold mb-2">Expenses</h2>
-        <p class="text-2xl font-bold text-red-500">$0</p>
+        <h2 class="text-lg font-semibold mb-2">
+          Expenses <span class="text-sm text-gray-400">(month)</span>
+        </h2>
+        <p id="expenseTotal" class="text-2xl font-bold text-red-500">$0</p>
       </div>
+      
+    </div>
+
+    <div class="flex items-center">
+        <input 
+            type="month" 
+            id="month" 
+            class="block w-48 bg-gray-800 px-3 py-2 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <button 
+            id="filterButton" 
+            class="ml-4 bg-blue-500 hover:bg-blue-600 text-white py-1 px-4 rounded-lg">
+            Filter
+        </button>
     </div>
 
     <!-- Recent Transactions Section -->
     <div>
       <h2 class="text-xl font-bold mb-4">Recent Transactions</h2>
-      <ul class="space-y-4" id="fillincome" >
-      
+      <ul class="space-y-4" id="filltransaction" >
+        
       </ul>
     </div>
+
+    <div class="flex flex-col items-center">
+      <!-- Help text -->
+      <span id="pagination-info" class="text-sm text-gray-700 dark:text-gray-400">
+          Showing <span class="font-semibold text-gray-900 dark:text-white">0</span> to <span class="font-semibold text-gray-900 dark:text-white">0</span> of <span class="font-semibold text-gray-900 dark:text-white">0</span> Entries
+      </span>
+      <!-- Buttons -->
+      <div class="inline-flex mt-2 xs:mt-0">
+          <button id="prev-button" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              Prev
+          </button>
+          <button id="next-button" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+              Next
+          </button>
+      </div>
+    </div>
+   
+
+
     <h1 class="text-gray-900 mt-32">.</h1>
   </section>
 </main>
@@ -115,5 +166,6 @@ class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
     <script src="../assets/js/burger-menu.js"></script>
     <script type="module" src="../assets/js/fetch-user.js"></script>
     <script type="module" src="../assets/js/post-logout.js"></script>
+    <script type="module" src="../assets/js/summary.js"></script>
   </body>
 </html>
