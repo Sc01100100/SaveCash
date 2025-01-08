@@ -3,15 +3,12 @@ import { TableTransaction } from "../js/temp/table-transaction.js";
 import { TableIncome } from "../js/temp/table-income.js";
 
 let combinedData = [];
-let currentPage = 1;
-const itemsPerPage = 7;
-let totalPages = 0; 
 
 function fetchCombinedData() {
     const token = localStorage.getItem("Authorization");
     if (!token) {
         alert("You are not logged in. Please log in again.");
-        window.location.href = "../pages/signin.html"; 
+        window.location.href = "../pages/signin.html";
         return;
     }
 
@@ -38,19 +35,9 @@ function fetchCombinedData() {
             new Date(b.created_at) - new Date(a.created_at)
         );
 
-        totalPages = Math.ceil(combinedData.length / itemsPerPage); 
-        renderPage();
+        renderCombinedData(combinedData);
     })
     .catch(error => console.error("Error:", error));
-}
-
-function renderPage() {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const pageData = combinedData.slice(start, end);
-
-    renderCombinedData(pageData);
-    updatePaginationInfo();
 }
 
 function renderCombinedData(data) {
@@ -80,34 +67,31 @@ function renderCombinedData(data) {
     document.getElementById("filltransaction").innerHTML = content;
 }
 
-function updatePaginationInfo() {
-    const totalItems = combinedData.length;
-    totalPages = Math.ceil(totalItems / itemsPerPage); 
-
-    const startItem = (currentPage - 1) * itemsPerPage + 1;
-    const endItem = Math.min(currentPage * itemsPerPage, totalItems);
-
-    const paginationInfo = document.getElementById("pagination-info");
-    paginationInfo.innerHTML = `Showing <span class="font-semibold text-gray-900 dark:text-white">${startItem}</span> to 
-        <span class="font-semibold text-gray-900 dark:text-white">${endItem}</span> of 
-        <span class="font-semibold text-gray-900 dark:text-white">${totalItems}</span> Entries`;
-
-    document.getElementById("prev-button").disabled = currentPage <= 1;
-    document.getElementById("next-button").disabled = currentPage >= totalPages;
+function updateSummaryUI(totalIncome, totalExpense) {
+    document.getElementById("incomeTotal").textContent = `$${totalIncome.toFixed(2)}`;
+    document.getElementById("expenseTotal").textContent = `$${totalExpense.toFixed(2)}`;
 }
 
-document.getElementById("prev-button").addEventListener("click", () => {
-    if (currentPage > 1) {
-        currentPage--;
-        renderPage();
+document.getElementById("filterButton").addEventListener("click", () => {
+    const selectedMonth = document.getElementById("month").value; 
+    if (!selectedMonth) {
+        alert("Please select a month to filter.");
+        return;
     }
-});
 
-document.getElementById("next-button").addEventListener("click", () => {
-    if (currentPage < totalPages) {
-        currentPage++;
-        renderPage();
-    }
+    const filteredData = combinedData.filter(item => {
+        const itemMonth = new Date(item.created_at).toISOString().slice(0, 7); 
+        return itemMonth === selectedMonth;
+    });
+
+    const filteredIncome = filteredData.filter(item => item.type === "income");
+    const filteredExpense = filteredData.filter(item => item.type === "transaction");
+
+    const totalIncome = filteredIncome.reduce((sum, income) => sum + income.amount, 0);
+    const totalExpense = filteredExpense.reduce((sum, expense) => sum + expense.amount, 0);
+
+    updateSummaryUI(totalIncome, totalExpense);
+    renderCombinedData(filteredData);
 });
 
 fetchCombinedData();
