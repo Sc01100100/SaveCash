@@ -1,6 +1,9 @@
 import { urlGETTransaction, urlGETIncome } from "./config/url.js";
 import { TableTransaction } from "../js/temp/table-transaction.js";
 import { TableIncome } from "../js/temp/table-income.js";
+import { deleteTransaction, deleteIncome } from '../js/controller/delete-transactions.js';
+import { openIncomePopup, closeIncomePopup, submitIncome } from '../js/controller/edit-income.js';
+import { openTransactionsPopup, closeTransactionsPopup, submitTransactions } from '../js/controller/edit-transactions.js';
 
 let combinedData = [];
 
@@ -50,21 +53,58 @@ function renderCombinedData(data) {
             currency: 'USD',
         }).format(item.amount);
 
+        let rowContent = '';
+
         if (item.type === "transaction") {
-            return TableTransaction
+            rowContent = TableTransaction
                 .replace("#CATEGORY#", item.category || "No Category")
                 .replace("#DESC#", item.description || "No Description")
                 .replace("#AMOUNT#", `- ${formattedAmount}`)
-                .replace("#DATE#", formatDate);
+                .replace("#DATE#", formatDate)
+                .replace("#TRANSACTION_EDIT_ID#", item.id)
+                .replace("#TRANSACTION_ID#", item.id);
         } else {
-            return TableIncome
+            rowContent = TableIncome
                 .replace("#SOURCE#", item.source || "No Source")
                 .replace("#AMOUNT#", `+ ${formattedAmount}`)
-                .replace("#DATE#", formatDate);
+                .replace("#DATE#", formatDate)
+                .replace("#INCOME_EDIT_ID#", item.id)
+                .replace("#INCOME_ID#", item.id);
         }
+
+        return rowContent;
     }).join("");
 
+
     document.getElementById("filltransaction").innerHTML = content;
+
+    document.querySelectorAll('.delete-transaction-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const transactionId = this.getAttribute('data-transaction-id');
+            deleteTransaction(transactionId);
+        });
+    });
+
+    document.querySelectorAll('.edit-transaction-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const transactionId = this.getAttribute('data-edit-transaction-id');
+            openTransactionsPopup(transactionId);
+        });
+    });
+
+     document.querySelectorAll('.edit-income-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const incomeId = this.getAttribute('data-edit-income-id');
+            openIncomePopup(incomeId);
+        });
+    });
+
+    document.querySelectorAll('.delete-income-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const incomeId = this.getAttribute('data-income-id');
+            deleteIncome(incomeId);
+        });
+    });
 }
 
 function updateSummaryUI(totalIncome, totalExpense) {
@@ -80,7 +120,7 @@ document.getElementById("filterButton").addEventListener("click", () => {
     }
 
     const filteredData = combinedData.filter(item => {
-        const itemMonth = new Date(item.created_at).toISOString().slice(0, 7); 
+        const itemMonth = new Date(item.created_at).toISOString().slice(0, 7);
         return itemMonth === selectedMonth;
     });
 
@@ -95,3 +135,7 @@ document.getElementById("filterButton").addEventListener("click", () => {
 });
 
 fetchCombinedData();
+window.closeIncomePopup = closeIncomePopup;
+window.submitIncome = submitIncome;
+window.closeTransactionsPopup = closeTransactionsPopup;
+window.submitTransactions = submitTransactions;
