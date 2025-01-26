@@ -135,27 +135,6 @@ class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
       </button>
     </form>
 
-    <script>
-      const amountInput = document.getElementById('transactionAmount');
-    
-      amountInput.addEventListener('keydown', (event) => {
-        if (
-          event.key === '-' || 
-          event.key === '+' || 
-          (event.key === 'e' || event.key === 'E') || 
-          event.key === '.' && amountInput.value.includes('.')
-        ) {
-          event.preventDefault();
-        }
-      });
-    
-      amountInput.addEventListener('input', () => {
-        if (amountInput.value < 1) {
-          amountInput.value = 1;
-        }
-      });
-    </script>
-  
           <!-- Form for Income -->
       <form
       id="income-form"
@@ -197,22 +176,6 @@ class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
       >
         Submit Income
       </button>
-
-      <script>
-        const incomeAmountInput = document.getElementById('amount');
-      
-        incomeAmountInput.addEventListener('keydown', (event) => {
-          if (
-            event.key === '-' || 
-            event.key === '+' ||
-            event.key === 'e' || event.key === 'E' || 
-            event.key === '.' 
-          ) {
-            event.preventDefault();
-          }
-        });
-      </script>
-
       </form>     
   </section>
   <h1 class="text-gray-900 mt-32">.</h1>
@@ -223,6 +186,7 @@ class="absolute top-4 right-4 lg:hidden text-gray-200 mb-24 focus:outline-none"
 
  <!-- External Scripts -->
  <script src="../assets/js/burger-menu.js"></script>
+ <script src="../assets/js/form-validation.js"></script>
  <script type="module" src="../assets/js/controller/post-transaction.js"></script>
  <script type="module" src="../assets/js/controller/post-income.js"></script>
  <script type="module" src="../assets/js/fetch-user2.js"></script>
